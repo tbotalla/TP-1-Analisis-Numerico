@@ -24,3 +24,11 @@ function Pn = lagrangeBaricentrico(xPuntos,yPuntos,x)
 		Pn = Pn + yPuntos(i) * ((Lx * Wi) / (x - xPuntos(i)));
 	end
 end
+
+
+%ejemplo con el que lo probe; 
+% xPuntos = [ 1 2 3 4 ]
+% yPuntos = [ 1 2 3 4 ]
+% lagrangeBaricentrico(xPuntos,yPuntos,5)
+% la interpolacion devuelve Pn(x=5) = 5
+
