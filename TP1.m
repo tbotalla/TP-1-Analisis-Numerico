@@ -8,7 +8,7 @@ deformaciones = [ 0.0000001 0.00028 0.0005771 0.0008486 0.001155 0.001464 0.0017
 ##Ejercicio 1: Lagrange Baricentrico
 
 xAInterpolar = 0;#(en que punto la interpolacion??)
-lagrangeBaricentrico(tensiones, deformaciones, xAInterpolar);
+lagrangeBaricentrico(tensiones, deformaciones, xAInterpolar)
 
 ##
 ##
