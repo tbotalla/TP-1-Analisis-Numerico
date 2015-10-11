@@ -1,4 +1,4 @@
-#Trazador cubico natural
+#Trazador cubico natural con frontera libre (S''(Xo)=S''(Xn)=0)
 #Basado en la implementacion del libro Analisis Numerico Richard Burden J. Douglas Faires
 #Entrada: tensiones = vector con los valores de las abscisas; deformaciones = vector con los valores de las ordenadas
 #Precondicion: longitud de tensiones == longitud de deformaciones
@@ -51,23 +51,25 @@ endfor
 
 #Paso 7
 #Salida y grafico
+#Si se quiere ver por pantalla los resultados de las constantes a,b,c,d .. descomentar las siguientes lineas
+#a
+#b
+#c
+#d
+
 for i=1:n-1;
     xAGraficar = tensiones(i):0.1:tensiones(i+1);
-    yAGraficar = a(i) + b(i) * (xAGraficar(i) - tensiones(i)) + c(i) * (xAGraficar(i) - tensiones(i)).^2 + d(i) * (xAGraficar(i) - tensiones(i)).^3;
+    yAGraficar = a(i) + b(i) * (xAGraficar - tensiones(i)) + c(i) * (xAGraficar - tensiones(i)).^2 + d(i) * (xAGraficar - tensiones(i)).^3;
     hold on;
-    plot(xAGraficar,yAGraficar,'b');
+    title('Interpolacion por splines de grado 3');
+    plot(xAGraficar,yAGraficar,'-','MarkerEdgeColor','r'); #grafica en color rojo, con ancho de linea=0.5
 end
-a
-b
-c
-d
-#for i=1:n;
-#    hold on;
-#    plot (X(1,i),X(2,i),'*','MarkerEdgeColor','r','LineWidth',1);
-#    title('Interpolaci�n por "splines" de orden 3.');
-#end
-
-
 
 endif
 endfunction
+
+#Probado con ejemplo del Burden, Tabla 3.16
+#tensiones = [0.9 1.3 1.9 2.1 2.6 3.0 3.9 4.4 4.7 5.0 6.0 7.0 8.0 9.2 10.5 11.3 11.6 12.0 12.6 13.0 13.3];
+#deformaciones = [1.3 1.5 1.85 2.1 2.6 2.7 2.4 2.15 2.05 2.1 2.25 2.3 2.25 1.95 1.4 0.9 0.7 0.6 0.5 0.4 0.25];
+#splineCubicoNatural(tensiones,deformaciones);
+#si se desean ver las constantes a,b,c,d que devuelve la funcion, se puede ver que coinciden con las esperadas

@@ -19,9 +19,9 @@ j=0;
 for i=xInicioGrafico:xFinGrafico
     j++;
 		yAGraficar(j) = lagrangeBaricentrico(tensiones, deformaciones, i);
-endfor
+end
 title('Lagrange Baricentrico');
-plot(xAGraficar, yAGraficar);
+plot(xAGraficar, yAGraficar,'-','MarkerEdgeColor','r','LineWidth',0.5); #grafica en color rojo, con ancho de linea=0.5);
 
 
 
