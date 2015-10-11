@@ -22,17 +22,20 @@ for i=xInicioGrafico:xFinGrafico
 end
 title('Lagrange Baricentrico');
 plot(xAGraficar, yAGraficar,'-','MarkerEdgeColor','r','LineWidth',0.5); #grafica en color rojo, con ancho de linea=0.5);
-
-
+#Fin grafico
 
 ####################################
 ####################################
-##Ejercicio 2: Spline
+#Ejercicio 2: Spline
+splineCubicoNatural(tensiones,deformaciones); #la funcion ya grafica el resultado
 
-##
-##
+####################################
+####################################
 ##Ejercicio 3: Ramberg-Osgood
 #a)
+cuadradosMinimosE(tensiones,deformaciones);
+#devuelve E=6.8520x10^4 esta bien? (no hice las cuentas)
+#b)
 
 
 
