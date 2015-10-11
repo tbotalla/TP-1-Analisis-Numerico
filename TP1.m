@@ -13,7 +13,7 @@ deltaCota = 10;
 #Grafico de la interpolacion por el metodo de Lagrange Baricentrico en el intervalo  [0-deltaCota..250+deltaCota] con paso 0.3
 xInicioGrafico = tensiones(1) - deltaCota;
 xFinGrafico = tensiones(length(tensiones)) + deltaCota;
-xAGraficar = xInicioGrafico:paso:xFinGrafico;
+xAGraficar = xInicioGrafico:paso:xFinGrafico; #define un vector con puntos desde xInicioGrafico hasta xFinGrafico equiespaciados una distancia paso
 yAGraficar = xAGraficar; #hardcodeado para que genere un vector del mismo tamanio
 j=0;
 for i=xInicioGrafico:xFinGrafico
@@ -28,7 +28,6 @@ plot(xAGraficar, yAGraficar);
 ####################################
 ####################################
 ##Ejercicio 2: Spline
-#la tenemos que implementar nosotros a la spline??
 
 ##
 ##
