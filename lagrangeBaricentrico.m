@@ -10,6 +10,7 @@ function Pn = lagrangeBaricentrico(tensiones,deformaciones,x)
 		Lx = Lx * (x - tensiones(i));
 	end
 
+	Pn = 0;#polinomio que sera evaluado en el x recibido a la entrada y sera devuelto como salida
 	#Pn(x)
 	for i=1:n
 		#Calculo del peso baricentrico de la iteracion correspondiente
@@ -20,7 +21,6 @@ function Pn = lagrangeBaricentrico(tensiones,deformaciones,x)
 			endif
 		end
 
-		Pn = 0;  #polinomio que sera evaluado en el x recibido a la entrada y sera devuelto como salida
 		#Dos posibilidades: (x == tensiones(i) || x != tensiones(i))
 		if (x == tensiones(i)) #con esto se salva la condicion x == tensiones(i) que provoca division por cero
 			Pn = Pn + deformaciones(i);
