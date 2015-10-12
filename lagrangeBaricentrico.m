@@ -2,7 +2,6 @@
 # deformaciones = vector fila conteniendo los valores y dato
 # x = valor en el que se evalua el polinomio
 function Pn = lagrangeBaricentrico(tensiones,deformaciones,x)
-	Pn = 0;  #polinomio a ser evaluado en x, que sera el retorno de la funcion
 	n = length(tensiones); #numero de datos
 
 	#L(x)
@@ -21,8 +20,9 @@ function Pn = lagrangeBaricentrico(tensiones,deformaciones,x)
 			endif
 		end
 
-		#Verificar que funciona bien cuando X = Xi o en este caso x = tensiones(i)
-		if (x == tensiones(i)) ##con esto se salva la condicion x == tensiones(i) que provoca division por cero
+		Pn = 0;  #polinomio que sera evaluado en el x recibido a la entrada y sera devuelto como salida
+		#Dos posibilidades: (x == tensiones(i) || x != tensiones(i))
+		if (x == tensiones(i)) #con esto se salva la condicion x == tensiones(i) que provoca division por cero
 			Pn = Pn + deformaciones(i);
 		else
 			Pn = Pn + deformaciones(i) * ((Lx * Wi) / (x - tensiones(i)));

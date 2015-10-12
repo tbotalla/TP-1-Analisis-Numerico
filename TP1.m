@@ -33,8 +33,16 @@ splineCubicoNatural(tensiones,deformaciones); #la funcion ya grafica el resultad
 ##Ejercicio 3: Ramberg-Osgood
 #a)
 cuadradosMinimosE(tensiones,deformaciones);
-#devuelve E=6.8520x10^4 esta bien? (no hice las cuentas)
+#devuelve E=6.8520x10^4 -->OK
+
 #b)
+[lnA,B] = cuadradosMinimosA(tensiones,deformaciones);
+for i=1:length(tensiones)
+    yAGraficar(i) = exp(lnA + B * log(tensiones(i))) + (tensiones(i) / (6.8520*10^4));
+end
+title('Cuadrados Minimos');
+plot(xAGraficar, yAGraficar,'-','MarkerEdgeColor','r','LineWidth',0.5); #grafica en color rojo, con ancho de linea=0.5);
+
 
 
 
