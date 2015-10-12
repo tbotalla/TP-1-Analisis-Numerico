@@ -50,20 +50,12 @@ for j=n-1:-1:1
 endfor
 
 #Paso 7
-#Salida y grafico
-#Si se quiere ver por pantalla los resultados de las constantes a,b,c,d .. descomentar las siguientes lineas
+#Salida
+#Si se quiere ver por pantalla los resultados de las constantes a,b,c,d: descomentar las siguientes 4 lineas
 #a
 #b
 #c
 #d
-
-for i=1:n-1;
-    xAGraficar = tensiones(i):0.1:tensiones(i+1);
-    yAGraficar = a(i) + b(i) * (xAGraficar - tensiones(i)) + c(i) * (xAGraficar - tensiones(i)).^2 + d(i) * (xAGraficar - tensiones(i)).^3;
-    hold on;
-    title('Interpolacion por splines de grado 3');
-    plot(xAGraficar,yAGraficar,'-','MarkerEdgeColor','r'); #grafica en color rojo, con ancho de linea=0.5
-end
 
 endif
 endfunction
