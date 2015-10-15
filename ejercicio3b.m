@@ -11,27 +11,17 @@ cuadradoSumaLnX = 0;
 sumaLnXCuadrado = 0;
 
 for i=1:length(tensiones10)
-  #fprintf("tension=");
-  #tensiones10(i)
   sumaLnX = sumaLnX + log(tensiones10(i));
   lnXCuadrado = log(tensiones10(i)) * log(tensiones10(i));
   sumaLnXCuadrado = sumaLnXCuadrado + lnXCuadrado;
   cuadradoSumaLnX = (sumaLnX * sumaLnX);
 endfor
-#fprintf("la suma de LnX: \n");
-#sumaLnX
-#fprintf("la suma de LnXCuadrado: \n");
-#sumaLnXCuadrado
-#fprintf("cuadradoSumaLnX: \n ");
-#cuadradoSumaLnX
 
 sumaLnY = 0;
 
 for i=1:length(tensiones10)
   sumaLnY = sumaLnY + log(deformaciones10(i));
 endfor
-#fprintf("suma de lnY: \n");
-#sumaLnY
 
 producto = 1;
 sumaProducto = 0;
@@ -40,10 +30,6 @@ for i=1:length(tensiones10)
   producto = log(tensiones10(i)) * log(deformaciones10(i));
   sumaProducto = sumaProducto + producto;
 endfor
-#fprintf("el producto de logx logy es : \n");
-#producto
-#fprintf("sumaProducto : \n");
-#sumaProducto
 
 #Retorno
 B = (10 * sumaProducto - (sumaLnX * sumaLnY)) / ((10 * sumaLnXCuadrado) - (cuadradoSumaLnX));
@@ -57,8 +43,6 @@ for i=1:length(xAGraficar)
     yAGraficar(i) = exp(lnA + B * log(tensiones10(i))) + (tensiones10(i) / E);
     #yAGraficar(i) = (lnA + B * log(tensiones(i))) ;
 end
-#xAGraficar
-#yAGraficar
 
 title('Cuadrados Minimos');
 plot(xAGraficar, yAGraficar,'-','MarkerEdgeColor','r','LineWidth',0.5); #grafica en color rojo, con ancho de linea=0.5);
