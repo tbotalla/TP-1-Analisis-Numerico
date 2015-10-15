@@ -13,6 +13,7 @@ for i=xInicioGrafico:paso:xFinGrafico
 		yAGraficar(j) = lagrangeBaricentrico(tensiones, deformaciones, i);
 end
 
+hold on;
 title('Lagrange Baricentrico');
 plot(xAGraficar, yAGraficar,'-','MarkerEdgeColor','r','LineWidth',0.5); #grafica en color rojo, con ancho de linea=0.5);
 xlabel('Tension');

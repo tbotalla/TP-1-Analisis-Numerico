@@ -42,6 +42,7 @@ xAGraficar = tensiones10;
 for i=1:length(xAGraficar)
     yAGraficar(i) = exp(lnA + B * log(tensiones10(i))) + (tensiones10(i) / E);
     #yAGraficar(i) = (lnA + B * log(tensiones(i))) ;
+    hold on;
 end
 
 title('Cuadrados Minimos');
