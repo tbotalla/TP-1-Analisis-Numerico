@@ -1,45 +1,66 @@
 #utiliza los ultimos 10 datos y el valor de E obtenido en la parte 3)a)
-#para hacer una aproximacion por cuadrados minimos de ln(A) = 0.002/((f0,2)^n) y B = n
-function [lnA,B] = ejercicio3b(tensiones,deformaciones,E)
+#para hacer una aproximacion por cuadrados minimos de exp(lnA + B * log(tensiones10(i))) + (tensiones10(i) / E);
+function [lnA,B,f02] = ejercicio3b(tensiones,deformaciones,E)
+
+#Tomo los ultimos 10 pares de datos
+tensiones10 = [ 140 160 180 190 200 210 220 230 240 250 ];
+deformaciones10 = [ 0.002427 0.004329 0.01058 0.01899 0.03068 0.05582 0.09165 0.1638 0.2498 0.4484 ];
 
 sumaLnX = 0;
 cuadradoSumaLnX = 0;
 sumaLnXCuadrado = 0;
-for i=(length(tensiones)-10):length(tensiones)
-  sumaLnX = sumaLnX + log(tensiones(i));
-  lnXCuadrado = log(tensiones(i)) * log(tensiones(i));
+
+for i=1:length(tensiones10)
+  #fprintf("tension=");
+  #tensiones10(i)
+  sumaLnX = sumaLnX + log(tensiones10(i));
+  lnXCuadrado = log(tensiones10(i)) * log(tensiones10(i));
   sumaLnXCuadrado = sumaLnXCuadrado + lnXCuadrado;
   cuadradoSumaLnX = (sumaLnX * sumaLnX);
 endfor
+#fprintf("la suma de LnX: \n");
+#sumaLnX
+#fprintf("la suma de LnXCuadrado: \n");
+#sumaLnXCuadrado
+#fprintf("cuadradoSumaLnX: \n ");
+#cuadradoSumaLnX
 
 sumaLnY = 0;
-for i=(length(tensiones)-10):length(tensiones)
-  sumaLnY = sumaLnY + log(deformaciones(i));
+
+for i=1:length(tensiones10)
+  sumaLnY = sumaLnY + log(deformaciones10(i));
 endfor
+#fprintf("suma de lnY: \n");
+#sumaLnY
 
 producto = 1;
 sumaProducto = 0;
-for i=(length(tensiones)-10):length(tensiones)
-  producto = log(tensiones(i)) * log(deformaciones(i));
+
+for i=1:length(tensiones10)
+  producto = log(tensiones10(i)) * log(deformaciones10(i));
   sumaProducto = sumaProducto + producto;
 endfor
+#fprintf("el producto de logx logy es : \n");
+#producto
+#fprintf("sumaProducto : \n");
+#sumaProducto
 
+#Retorno
 B = (10 * sumaProducto - (sumaLnX * sumaLnY)) / ((10 * sumaLnXCuadrado) - (cuadradoSumaLnX));
 lnA = ((sumaLnXCuadrado * sumaLnY) - (sumaProducto * sumaLnX)) / ((10 * sumaLnXCuadrado) - (cuadradoSumaLnX));
-#hay que agregar que devuelva f02 para el ejercicio 5
+f02 = nthroot((0.002)/(exp(lnA)),B); #computa la raiz B-esima de 0.002/A
 
 ##################################
 #Grafico con los valores obtenidos
-#xAGraficar = tensiones;
-xAGraficar = [ 140 160 180 190 200 210 220 230 240 250 ];
-#xAGraficar
+xAGraficar = tensiones10;
 for i=1:length(xAGraficar)
-    yAGraficar(i) = exp(lnA + B * log(tensiones(i))) + (tensiones(i) / E);
+    yAGraficar(i) = exp(lnA + B * log(tensiones10(i))) + (tensiones10(i) / E);
     #yAGraficar(i) = (lnA + B * log(tensiones(i))) ;
 end
+#xAGraficar
 #yAGraficar
+
 title('Cuadrados Minimos');
 plot(xAGraficar, yAGraficar,'-','MarkerEdgeColor','r','LineWidth',0.5); #grafica en color rojo, con ancho de linea=0.5);
-
 
 endfunction

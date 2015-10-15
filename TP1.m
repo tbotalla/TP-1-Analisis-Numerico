@@ -21,18 +21,21 @@ ejercicio2(tensiones,deformaciones,paso);
 ##Ejercicio 3: Ramberg-Osgood
 #a)
 
-#E = ejercicio3a(tensiones,deformaciones); #devuelve E=6.8520x10^4 -->OK
-#otra forma, con la nueva funcion de cuadrados minimos:
 tensiones6 = [ 0 20 40 60 80 100 ];
 deformaciones6 = [ 0.0000001 0.00028 0.0005771 0.0008486 0.001155 0.001464 ];
 [b, m] = cuadradosMinimos(tensiones6,deformaciones6);
-E = 1 / m;
+E = 1 / m; #devuelve E=6.8520x10^4 -->OK
 
 #b)
 
-[lnA,B] = ejercicio3b(tensiones,deformaciones,E); #Revisar las cuentas no da bien
+#se implemento aparte la funcion de cuadrados minimos
+[lnA,B,f02] = ejercicio3b(tensiones,deformaciones,E);
 
 #c)
+
+ejercicio3c(tensiones,deformaciones,E,lnA,B,f02);
+
+
 
 
 

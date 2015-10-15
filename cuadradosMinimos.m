@@ -1,5 +1,5 @@
   function [b, m] = cuadradosMinimos (tensiones, deformaciones)
-  #Ajuste de minimos cuadrados a una recta y = b + m*x
+  #Ajuste de minimos cuadrados a una recta y = m*x + b
   #Datos: tensiones y deformaciones son vectores de igual dimension con los datos
   #Salida: Parametros de la recta m,x
 

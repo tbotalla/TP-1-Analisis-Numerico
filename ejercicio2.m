@@ -10,7 +10,7 @@ for i=1:n-1;
     yAGraficar = a(i) + b(i) * (xAGraficar - tensiones(i)) + c(i) * (xAGraficar - tensiones(i)).^2 + d(i) * (xAGraficar - tensiones(i)).^3;
     hold on;
     title('Interpolacion por splines de grado 3');
-    plot(xAGraficar,yAGraficar,'-','MarkerEdgeColor','r'); #grafica en color rojo, con ancho de linea=0.5
+    plot(xAGraficar,yAGraficar,'-','MarkerEdgeColor','r'); #grafica en color rojo
 end
 
 endfunction
