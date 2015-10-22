@@ -1,3 +1,10 @@
+# Entrada:
+# tensiones = vector fila conteniendo los valores x dato
+# deformaciones = vector fila conteniendo los valores y dato
+# paso = distancia entre punto y punto del grafico
+# Salida:
+# Deformaciones correspondientes a limite elastico, obtenidas con los distintos
+# tipos de interpolacion usados
 function [epsilonLagrange,epsilonSpline,epsilonCM] = ejercicio5(tensiones,deformaciones,paso,f02)
 
 n = length(tensiones);

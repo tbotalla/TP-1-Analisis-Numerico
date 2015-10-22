@@ -1,6 +1,9 @@
+# Entrada:
 # tensiones = vector fila conteniendo los valores x dato
 # deformaciones = vector fila conteniendo los valores y dato
 # x = valor en el que se evalua el polinomio (x a interpolar)
+# Precondicion: longitud de tensiones == longitud de deformaciones
+# Salida:
 # devuelve el resultado de la interpolacion en el x dado
 function Pn = lagrangeBaricentrico(tensiones,deformaciones,x)
 

@@ -1,8 +1,12 @@
-  function [b, m] = cuadradosMinimos (tensiones, deformaciones)
-  #Ajuste de minimos cuadrados a una recta y = m*x + b
-  #Datos: tensiones y deformaciones son vectores de igual dimension con los datos
-  #Salida: Parametros de la recta m,x
+# Aproximacion por minimos cuadrados a una recta y = m*x + b
+# Entrada:
+# tensiones = vector fila conteniendo los valores x dato
+# deformaciones = vector fila conteniendo los valores y dato
+# Precondicion: longitud de tensiones == longitud de deformaciones
+# Salida:
+# Parametros de la recta m,x
 
+function [b, m] = cuadradosMinimos (tensiones, deformaciones)
   if (length(tensiones) != length(deformaciones))
     fprintf("Las longitudes de los datos no pueden ser diferentes \n");
   else
@@ -24,4 +28,4 @@
     m = (nx * sxy - sx * sy) / det1;
 
   endif
-  endfunction
+endfunction

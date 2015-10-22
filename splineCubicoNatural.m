@@ -1,8 +1,10 @@
-#Trazador cubico natural con frontera libre (S''(Xo)=S''(Xn)=0)
-#Basado en la implementacion del libro Analisis Numerico Richard Burden J. Douglas Faires
-#Entrada: tensiones = vector con los valores de las abscisas; deformaciones = vector con los valores de las ordenadas
-#Precondicion: longitud de tensiones == longitud de deformaciones
-#Salida: a,b,c,d vectores con las constantes correspondientes a cada trazador cubico
+# Trazador cubico natural con frontera libre (S''(Xo)=S''(Xn)=0)
+# Basado en la implementacion del libro Analisis Numerico Richard Burden J. Douglas Faires
+# Entrada:
+# tensiones = vector con los valores de las abscisas; deformaciones = vector con los valores de las ordenadas
+# Precondicion: longitud de tensiones == longitud de deformaciones
+# Salida:
+# a,b,c,d vectores con las constantes correspondientes a cada trazador cubico
 function [a,b,c,d] = splineCubicoNatural(tensiones,deformaciones)
 
 if (length(tensiones) != length(deformaciones))

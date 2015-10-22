@@ -1,5 +1,8 @@
+# Cada funcion corresponde a un item del trabajo practico, las mismas deben ser
+# ejecutadas secuencialmente
 function retorno = TP1()
 
+#Datos de entrada
 tensiones = [ 0 20 40 60 80 100 120 140 160 180 190 200 210 220 230 240 250 ];
 deformaciones = [ 0.0000001 0.00028 0.0005771 0.0008486 0.001155 0.001464 0.001795 0.002427 0.004329 0.01058 0.01899 0.03068 0.05582 0.09165 0.1638 0.2498 0.4484 ]
 paso = 0.1;
@@ -23,12 +26,9 @@ paso = 0.1;
 #Ejercicio 3: Ramberg-Osgood
 #a)Obtencion del modulo de elasticidad tangente al origen utilizando cuadrados minimos
 
-tensiones6 = [ 0 20 40 60 80 100 ];
-deformaciones6 = [ 0.0000001 0.00028 0.0005771 0.0008486 0.001155 0.001464 ];
-[b, m] = cuadradosMinimos(tensiones6,deformaciones6);
-E = 1 / m; #devuelve E=6.8520x10^4 -->OK
+E = ejercicio3a(tensiones,deformaciones);
 
-#b)Aproximacion por cuadrados minimos de
+#b)Aproximacion por cuadrados minimos de exp(lnA + B * log(tensiones10(i))) + (tensiones10(i) / E)
 #se implemento aparte la funcion de cuadrados minimos
 [lnA,B,f02,xAGraficarCM,yAGraficarCM] = ejercicio3b(tensiones,deformaciones,E);
 
@@ -43,14 +43,4 @@ ejercicio3c(tensiones,deformaciones,E,lnA,B,f02);
 ejercicio5(tensiones,deformaciones,paso,f02)
 
 
-
-
-
-
-
-
-
-
-
-
-end
+endfunction
