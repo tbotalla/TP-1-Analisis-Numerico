@@ -16,9 +16,9 @@ ejercicio1(tensiones,deformaciones,paso);
 
 ejercicio2(tensiones,deformaciones,paso);
 
-#############################
-#############################
-##Ejercicio 3: Ramberg-Osgood
+############################
+############################
+#Ejercicio 3: Ramberg-Osgood
 #a)
 
 tensiones6 = [ 0 20 40 60 80 100 ];
@@ -35,7 +35,11 @@ E = 1 / m; #devuelve E=6.8520x10^4 -->OK
 
 ejercicio3c(tensiones,deformaciones,E,lnA,B,f02);
 
+#############################
+#############################
+#Ejercicio 5: Limite Elastico
 
+ejercicio5(tensiones,deformaciones,paso,f02)
 
 
 
