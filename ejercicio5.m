@@ -14,4 +14,6 @@ epsilonSpline = a(8) + b(8) * (f02 - tensiones(8)) + c(8) * (f02 - tensiones(8))
 
 #Cuadrados Minimos
 
+
+
 endfunction
