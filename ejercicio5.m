@@ -13,7 +13,7 @@ epsilonLagrange = lagrangeBaricentrico(tensiones,deformaciones,f02);
 epsilonSpline = a(8) + b(8) * (f02 - tensiones(8)) + c(8) * (f02 - tensiones(8)).^2 + d(8) * (f02 - tensiones(8)).^3;
 
 #Cuadrados Minimos
-
-
+[b,m] = cuadradosMinimos(tensiones,deformaciones);
+epsilonCM = m * f02 + b
 
 endfunction

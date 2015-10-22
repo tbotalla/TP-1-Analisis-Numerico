@@ -1,6 +1,6 @@
 #utiliza los ultimos 10 datos y el valor de E obtenido en la parte 3)a)
 #para hacer una aproximacion por cuadrados minimos de exp(lnA + B * log(tensiones10(i))) + (tensiones10(i) / E);
-function [lnA,B,f02] = ejercicio3b(tensiones,deformaciones,E)
+function [lnA,B,f02,xAGraficar,yAGraficar] = ejercicio3b(tensiones,deformaciones,E)
 
 #Tomo los ultimos 10 pares de datos
 tensiones10 = [ 140 160 180 190 200 210 220 230 240 250 ];
@@ -46,8 +46,9 @@ for i=1:length(xAGraficar)
 end
 
 title('Cuadrados Minimos');
-plot(xAGraficar, yAGraficar,'-','MarkerEdgeColor','r','LineWidth',0.5); #grafica en color rojo, con ancho de linea=0.5);
+plot(xAGraficar, yAGraficar,'m'); #grafica en color magenta
 xlabel('Tension');
 ylabel('Deformacion');
+axis([0,260,-1e-16,1]);
 
 endfunction

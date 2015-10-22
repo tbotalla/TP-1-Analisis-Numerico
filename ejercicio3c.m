@@ -12,8 +12,9 @@ function [ret] = ejercicio3c(tensiones,deformaciones,E,lnA,B,f02)
   #yAGraficar
 
   title('Expresion de Ramberg-Osgood');
-  plot(xAGraficar,yAGraficar,'-','MarkerEdgeColor','r'); #grafica en color rojo, con ancho de linea=0.5
+  plot(xAGraficar,yAGraficar,'k'); #grafica en color negro
   xlabel('Tension');
   ylabel('Deformacion');
+  axis([0,260,-1e-16,1]);
 
 endfunction

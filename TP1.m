@@ -8,32 +8,33 @@ paso = 0.1;
 ###################################
 #Ejercicio 1: Lagrange Baricentrico
 
-ejercicio1(tensiones,deformaciones,paso);
+[xAGraficarLagrange, yAGraficarLagrange] = ejercicio1(tensiones,deformaciones,paso);
+
 
 ####################
 ####################
 #Ejercicio 2: Spline
 
-ejercicio2(tensiones,deformaciones,paso);
+[xAGraficarSPline,yAGraficarSPline] = ejercicio2(tensiones,deformaciones,paso);
+
 
 ############################
 ############################
 #Ejercicio 3: Ramberg-Osgood
-#a)
+#a)Obtencion del modulo de elasticidad tangente al origen utilizando cuadrados minimos
 
 tensiones6 = [ 0 20 40 60 80 100 ];
 deformaciones6 = [ 0.0000001 0.00028 0.0005771 0.0008486 0.001155 0.001464 ];
 [b, m] = cuadradosMinimos(tensiones6,deformaciones6);
 E = 1 / m; #devuelve E=6.8520x10^4 -->OK
 
-#b)
-
+#b)Aproximacion por cuadrados minimos de
 #se implemento aparte la funcion de cuadrados minimos
-[lnA,B,f02] = ejercicio3b(tensiones,deformaciones,E);
+[lnA,B,f02,xAGraficarCM,yAGraficarCM] = ejercicio3b(tensiones,deformaciones,E);
 
-#c)
-
+#c)Expresion de Ramberg-Osgood
 ejercicio3c(tensiones,deformaciones,E,lnA,B,f02);
+
 
 #############################
 #############################
