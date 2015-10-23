@@ -19,9 +19,9 @@ Ing. Florencia Lanteri, Ing. Micaela Suriano, Mara Eidelsztein
 
 Integrantes
 
-Padrón
+Padrón;
 Botalla, Tomás Enrique
-96356
+96356;
 Ledesma, Juan Sebastián
 93807
 Peragallo Sommer, Claudia G.
