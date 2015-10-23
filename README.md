@@ -17,14 +17,9 @@ Profesor Titular:  Ing. Rodolfo Schwarz - Jefe de TP: Ing. Germán E. Sosa
 Docentes:
 Ing. Florencia Lanteri, Ing. Micaela Suriano, Mara Eidelsztein
 
-Integrantes
+Integrantes:
 
-Padrón;
-Botalla, Tomás Enrique
-96356;
-Ledesma, Juan Sebastián
-93807
-Peragallo Sommer, Claudia G.
-87112
-Vido, Hernán Andrés
-70090
+Botalla, Tomás Enrique;
+Ledesma, Juan Sebastián;
+Peragallo Sommer, Claudia G.;
+Vido, Hernán Andrés;
