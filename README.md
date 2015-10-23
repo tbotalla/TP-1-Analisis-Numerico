@@ -1,6 +1,3 @@
-# TP-1-Analisis-Numerico
-# El desarrollo del trabajo práctico debe seguirse de acuerdo a lo indicado en el archivo TP1.m
-
 # UNIVERSIDAD DE BUENOS AIRES FACULTAD DE  INGENIERÍA
 # Departamento de Computación
 
@@ -15,19 +12,19 @@
 # TRABAJO PRÁCTICO 1
 # Ajuste e Interpolación Sistemas de Ecuaciones Lineales
 
-# Profesor Titular:  Ing. Rodolfo Schwarz - Jefe de TP: Ing. Germán E. Sosa
+Profesor Titular:  Ing. Rodolfo Schwarz - Jefe de TP: Ing. Germán E. Sosa
 
-# Docentes:
-# Ing. Florencia Lanteri, Ing. Micaela Suriano, Mara Eidelsztein
+Docentes:
+Ing. Florencia Lanteri, Ing. Micaela Suriano, Mara Eidelsztein
 
-# Integrantes
+Integrantes
 
-# Padrón
-# Botalla, Tomás Enrique
-# 96356
-# Ledesma, Juan Sebastián
-# 93807
-# Peragallo Sommer, Claudia G.
-# 87112
-# Vido, Hernán Andrés
-# 70090
+Padrón
+Botalla, Tomás Enrique
+96356
+Ledesma, Juan Sebastián
+93807
+Peragallo Sommer, Claudia G.
+87112
+Vido, Hernán Andrés
+70090
