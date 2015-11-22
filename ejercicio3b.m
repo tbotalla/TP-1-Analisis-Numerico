@@ -55,7 +55,7 @@ for i=1:length(xAGraficar)
 end
 
 title('Cuadrados Minimos');
-plot(xAGraficar, yAGraficar,'m'); #grafica en color magenta
+plot(xAGraficar, yAGraficar,'--m','linewidth', 2.5); #grafica en color magenta con ancho de linea 3
 xlabel('Tension');
 ylabel('Deformacion');
 axis([xInicioGrafico,xFinGrafico,-1e-16,1]);

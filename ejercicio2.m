@@ -19,7 +19,7 @@ for i=1:n-1;
     yAGraficar = a(i) + b(i) * (xAGraficar - tensiones(i)) + c(i) * (xAGraficar - tensiones(i)).^2 + d(i) * (xAGraficar - tensiones(i)).^3;
     hold on;
     title('Interpolacion por splines de grado 3');
-    plot(xAGraficar,yAGraficar,'g'); #grafica en color verde
+    plot(xAGraficar,yAGraficar,'--g','linewidth', 2.5); #grafica en color verde con ancho de linea 3
     xlabel('Tension');
     ylabel('Deformacion');
     axis([xInicioGrafico,xFinGrafico,-1e-16,1]);

@@ -23,7 +23,7 @@ end
 # Inicio grafico
 hold on;
 title('Lagrange Baricentrico');
-plot(xAGraficar, yAGraficar, 'r'); #grafica en color rojo
+plot(xAGraficar, yAGraficar, '--r', 'linewidth', 2.5); #grafica en color rojo con ancho de linea 3
 xlabel('Tension');
 ylabel('Deformacion');
 axis([xInicioGrafico,xFinGrafico,-1e-16,1]);
